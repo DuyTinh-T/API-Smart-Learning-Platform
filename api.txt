@@ -1,0 +1,110 @@
+📌 API Endpoints cho AI-LMS
+1. Authentication & User
+
+POST /auth/register → Đăng ký tài khoản
+
+POST /auth/login → Đăng nhập (trả JWT)
+
+POST /auth/logout → Đăng xuất
+
+GET /users/me → Lấy thông tin user hiện tại
+
+PUT /users/me → Cập nhật profile cá nhân
+
+GET /users/:id → (Admin) Lấy thông tin chi tiết user
+
+GET /users → (Admin) Lấy danh sách user
+
+2. Course Management
+
+GET /courses → Danh sách tất cả khóa học
+
+GET /courses/:id → Chi tiết một khóa học (bao gồm module & lesson)
+
+POST /courses → (Admin/Teacher) Tạo khóa học mới
+
+PUT /courses/:id → (Admin/Teacher) Cập nhật khóa học
+
+DELETE /courses/:id → (Admin/Teacher) Xóa khóa học
+
+3. Module Management
+
+POST /courses/:courseId/modules → Tạo module trong khóa học
+
+GET /courses/:courseId/modules → Lấy danh sách module trong khóa học
+
+PUT /modules/:id → Cập nhật module
+
+DELETE /modules/:id → Xóa module
+
+4. Lesson Management
+
+POST /modules/:moduleId/lessons → Tạo lesson trong module
+
+GET /modules/:moduleId/lessons → Danh sách lesson trong module
+
+GET /lessons/:id → Chi tiết lesson
+
+PUT /lessons/:id → Cập nhật lesson
+
+DELETE /lessons/:id → Xóa lesson
+
+5. Media (Lesson Content)
+
+POST /lessons/:lessonId/media → Upload media (video/audio/pdf)
+
+GET /lessons/:lessonId/media → Danh sách media của lesson
+
+DELETE /media/:id → Xóa media
+
+6. Quiz & TOEIC Test
+
+POST /lessons/:lessonId/quizzes → Tạo quiz cho bài học
+
+GET /lessons/:lessonId/quizzes → Lấy danh sách quiz trong lesson
+
+POST /quizzes/:id/submit → Nộp bài quiz (trả điểm)
+
+GET /quizzes/:id/result → Xem kết quả quiz
+
+GET /users/:userId/quizzes → Lịch sử làm quiz của học viên
+
+7. Progress Tracking
+
+POST /progress → Cập nhật tiến độ (lesson_id, status, time_spent)
+
+GET /users/:userId/progress → Xem tiến độ học viên
+
+GET /courses/:courseId/progress/:userId → Tiến độ học viên trong khóa học
+
+8. AI Recommendation
+
+POST /ai/recommendations → Gửi dữ liệu học (history, quiz score, time) → Nhận gợi ý từ AI
+
+GET /ai/recommendations/:userId → Lịch sử gợi ý của user
+
+POST /ai/feedback → Học viên gửi feedback cho gợi ý
+
+9. Blockchain Payment
+
+POST /payments/checkout → Tạo giao dịch mua khóa học (tạo QR/Wallet connect)
+
+GET /payments/:txHash → Kiểm tra trạng thái giao dịch blockchain
+
+GET /users/:userId/payments → Lịch sử thanh toán của user
+
+10. Notifications
+
+GET /users/:userId/notifications → Danh sách thông báo
+
+POST /notifications → (Admin/AI) Gửi thông báo cho user
+
+PUT /notifications/:id/read → Đánh dấu thông báo đã đọc
+
+11. Admin Dashboard
+
+GET /admin/stats → Thống kê tổng quan (users, courses, revenue)
+
+GET /admin/users/active → Danh sách học viên đang hoạt động
+
+GET /admin/courses/popular → Các khóa học phổ biến

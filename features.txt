@@ -1,0 +1,140 @@
+📌 Chức năng chính của hệ thống LMS + AI Recommendation
+1. Quản lý người dùng (User Management)
+
+Đăng ký / Đăng nhập / Đăng xuất (JWT Authentication).
+
+Phân quyền:
+
+Admin: tạo & quản lý khóa học, quản lý user.
+
+Teacher: tạo module, bài học, quản lý học viên trong khóa.
+
+Student: học khóa học, làm quiz, xem gợi ý từ AI.
+
+Profile cá nhân:
+
+Cập nhật thông tin.
+
+Xem tiến độ học (progress).
+
+Xem lịch sử học tập & điểm số.
+
+2. Quản lý khóa học (Course Management)
+
+Admin/Teacher:
+
+Tạo / chỉnh sửa / xóa khóa học.
+
+Gán modules và lessons vào khóa học.
+
+Upload tài liệu, video, audio (VD: TOEIC listening).
+
+Học viên:
+
+Xem danh sách khóa học.
+
+Đăng ký tham gia khóa học.
+
+Xem syllabus (danh sách module → lesson).
+
+3. Module & Lesson
+
+Module: nhóm các bài học theo chủ đề.
+
+Lesson: nhiều loại:
+
+Video: học qua video.
+
+Text: đọc tài liệu, lý thuyết.
+
+Quiz/Test: câu hỏi trắc nghiệm để kiểm tra.
+
+Audio: luyện nghe (TOEIC listening).
+
+Chức năng trong lesson:
+
+Hiển thị nội dung (video, text, audio).
+
+Làm quiz, lưu điểm.
+
+Lưu trạng thái hoàn thành.
+
+4. Tiến độ học tập (Progress Tracking)
+
+Lưu thời gian học từng ngày.
+
+Lưu lesson đã hoàn thành.
+
+Ghi nhận điểm số quiz/test.
+
+Báo cáo tiến độ theo khóa học (% hoàn thành).
+
+5. AI Recommendation (trọng tâm đồ án 🚀)
+
+AI sẽ dựa trên:
+
+Lịch sử học của học viên.
+
+Điểm số các bài quiz/test.
+
+Thời gian học/ngày.
+
+Khóa học & lesson đã hoàn thành.
+
+Và đưa ra gợi ý cá nhân hóa:
+
+Nên học môn nào / lesson nào tiếp theo.
+
+Thời lượng học phù hợp trong ngày.
+
+Tài liệu tham khảo (kết nối API sách/tài liệu).
+
+Gợi ý luyện tập TOEIC (ví dụ: nghe thêm Part 2, vì điểm Part 2 còn thấp).
+
+6. Bài kiểm tra & TOEIC Practice
+
+Quiz: trắc nghiệm tự động chấm điểm.
+
+TOEIC Listening/Reading:
+
+Audio (file mp3) + câu hỏi.
+
+Tự động chấm điểm.
+
+Lưu kết quả cho AI phân tích.
+
+7. Dashboard & Báo cáo
+
+Admin Dashboard:
+
+Số lượng user.
+
+Số lượng khóa học.
+
+Tiến độ trung bình của học viên.
+
+Student Dashboard:
+
+Tiến độ từng khóa học.
+
+Điểm số quiz/test.
+
+Gợi ý học tập từ AI.
+
+8. Setting & Cá nhân hóa
+
+Người dùng chọn mục tiêu học tập (VD: “Thi TOEIC 500 trong 2 tháng”).
+
+Người dùng chọn thời gian học trong ngày (VD: 1h/ngày).
+
+AI cá nhân hóa gợi ý dựa vào mục tiêu & thời gian này.
+
+✅ Tóm gọn
+
+Dự án có 3 mảng chính:
+
+Core LMS: User, Course, Module, Lesson, Progress, Quiz.
+
+TOEIC Practice: Audio, Quiz, Reading/Listening.
+
+AI Recommendation: gợi ý học tập thông minh dựa trên dữ liệu cá nhân.
